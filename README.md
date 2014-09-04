@@ -19,10 +19,10 @@ Installation
   - create your private network (192.168.0.0/24 is assumed for this setup)
   - external dns setting like 8.8.8.8 is needed for the subnet
   - make your SSH key
-  - security group: Ingress/ALLTCP/same-group is needed for cluster forming
+  - security group: set as you can access (Please make sure Ingress/ALLTCP/same-group is needed for cluster forming)
 * Launch a new instance from "Project">"Compute">"Instance">"Launch Instance"
-  - AZ: any (all nodes have to belong to the same AZ)
-  - instance-name: "mapr-1","mapr-2","mapr-3" resp. (align the name with the script)
+  - AZ: any (but all nodes have to belong to the same AZ)
+  - instance-name: "mapr-1","mapr-2","mapr-3" resp. (Use the same name as "user-data.sh" script)
   - flavor: above small is favorable
   - instance-count: 1 (create one by one. total 3 nodes will be created)
   - boot-source: image
