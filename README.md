@@ -11,6 +11,7 @@ Notes
 * Only M3 edition cluster is targeted.
 * If you use MapR NFS Gateway, you have to register the free M3 license via www.mapr.com.
 * You have to edit the "user-data.sh" for fixed-ips in advance to successfully create "/etc/hosts" file in the nodes.
+  - We can assign specific fixed-ips by [this](https://community.hpcloud.com/article/creating-instance-specific-fixed-ip), which requires CLI tools
  
 Installation
 ------------
