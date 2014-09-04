@@ -36,7 +36,7 @@ Access
 ------
 * You can MapR Console via https://<1st-node-floatingip>:8443/
 * After apply a new M3 license for the cluster, you can mount and access to NFS Gateway.
-* 
+
 `
 # mkdir /mapr  
 # mount -t nfs -o nolock <1st-node-floatingip>:/mapr /mapr  
