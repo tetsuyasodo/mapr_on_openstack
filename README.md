@@ -15,36 +15,35 @@ Notes
 Installation
 ------------
 * Login to [hp helion public cloud](https://horizon.hpcloud.com)
-* Prepare your private network (192.168.0.0/24 is assumed for this setup. external dns like 8.8.8.8 is needed)
-* Prepare your SSH key
-* security group: Ingress/ALLTCP/same-group is needed for cluster forming
+* Preparation
+  - create your private network (192.168.0.0/24 is assumed for this setup)
+  - external dns setting like 8.8.8.8 is needed for the subnet
+  - make your SSH key
+  - security group: Ingress/ALLTCP/same-group is needed for cluster forming
 * Launch a new instance from "Project">"Compute">"Instance">"Launch Instance"
-* AZ: any (all nodes have to belong to the same AZ)
-* instance-name: "mapr-1","mapr-2","mapr-3" resp. (align the name with the script)
-* flavor: above small is favorable
-* instance-count: 1
-* boot-source: image
-* image-name: CentOS 6.3 from public images
-* network: the group you have created
-* key: the key you have created
-* post-creation: paste "user-data.sh" contents
+  - AZ: any (all nodes have to belong to the same AZ)
+  - instance-name: "mapr-1","mapr-2","mapr-3" resp. (align the name with the script)
+  - flavor: above small is favorable
+  - instance-count: 1 (create one by one. total 3 nodes will be created)
+  - boot-source: image
+  - image-name: CentOS 6.3 from public images
+  - network: the group you have created
+  - key: the key you have created
+  - post-creation: paste "user-data.sh" contents
 * Floating-IP: after 1st node booted up, attach any one floating-ip to access MapR Console
-
-You boot 3 nodes like above and you can see a new cluster come up.
+* You boot 3 nodes like above and you can see a new cluster come up.
 
 Access
 ------
 * You can MapR Console via https://<1st-node-floatingip>:8443/
 * After apply a new M3 license for the cluster, you can mount and access to NFS Gateway.
 
-`
-    
-    # mkdir /mapr
-    
-    # mount -t nfs -o nolock <1st-node-floatingip>:/mapr /mapr
-    
-    # ls /mapr  
-`
+    $ mkdir /mapr
+
+    $ sudo mount -t nfs -o nolock <1st-node-floatingip>:/mapr /mapr
+
+    $ ls /mapr  
+
 
 Limitation
 ----------
