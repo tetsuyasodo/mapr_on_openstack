@@ -38,9 +38,9 @@ Access
 * After apply a new M3 license for the cluster, you can mount and access to NFS Gateway.
 * 
 `
-# mkdir /mapr
-# mount -t nfs -o nolock <1st-node-floatingip>:/mapr /mapr
-# ls /mapr
+# mkdir /mapr  
+# mount -t nfs -o nolock <1st-node-floatingip>:/mapr /mapr  
+# ls /mapr  
 `
 
 Limitation
